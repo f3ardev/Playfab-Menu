@@ -11,7 +11,6 @@
    ROOT VARIABLES & THEME SYSTEM
    ════════════════════════════════════════════════════════ */
 :root {
-  /* Light Theme */
   --bg-app: #f0ece4;
   --bg-surface: #faf8f4;
   --bg-elevated: #ffffff;
@@ -70,7 +69,6 @@
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* ── Dark Mode ── */
 html.dark {
   --bg-app: #0e0e0e;
   --bg-surface: #181818;
@@ -95,9 +93,6 @@ html.dark {
   --shadow-xl: 0 24px 64px rgba(0,0,0,0.6);
 }
 
-/* ════════════════════════════════════════════════════════
-   RESET & BASE
-   ════════════════════════════════════════════════════════ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
@@ -121,48 +116,16 @@ body { min-height: 100vh; line-height: 1.5; }
 
 a { color: var(--accent); text-decoration: none; }
 
-/* ════════════════════════════════════════════════════════
-   UTILITY ANIMATIONS
-   ════════════════════════════════════════════════════════ */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes slideDown {
-  from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes scaleIn {
-  from { opacity: 0; transform: scale(0.96); }
-  to { opacity: 1; transform: scale(1); }
-}
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-@keyframes pulseGlow {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
-}
-@keyframes toastEnter {
-  from { opacity: 0; transform: translateX(100%) scale(0.9); }
-  to { opacity: 1; transform: translateX(0) scale(1); }
-}
-@keyframes toastExit {
-  to { opacity: 0; transform: translateX(100%) scale(0.9); }
-}
-@keyframes shakeX {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-6px); }
-  75% { transform: translateX(6px); }
-}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideDown { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes scaleIn { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulseGlow { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+@keyframes toastEnter { from { opacity: 0; transform: translateX(100%) scale(0.9); } to { opacity: 1; transform: translateX(0) scale(1); } }
+@keyframes toastExit { to { opacity: 0; transform: translateX(100%) scale(0.9); } }
+@keyframes shakeX { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
 
-/* ════════════════════════════════════════════════════════
-   LOGIN SCREEN
-   ════════════════════════════════════════════════════════ */
 #login-view {
   min-height: 100vh;
   display: flex;
@@ -183,7 +146,6 @@ a { color: var(--accent); text-decoration: none; }
   pointer-events: none;
 }
 
-/* Subtle grid pattern */
 #login-view::after {
   content: '';
   position: absolute;
@@ -209,30 +171,19 @@ a { color: var(--accent); text-decoration: none; }
   animation: slideUp 0.55s var(--ease) both;
 }
 
-.login-brand {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 6px;
-}
+.login-brand { display: flex; align-items: center; gap: 14px; margin-bottom: 6px; }
 
 .login-brand-icon {
-  width: 46px;
-  height: 46px;
+  width: 46px; height: 46px;
   background: linear-gradient(135deg, var(--accent), #e86a3a);
   border-radius: var(--radius-md);
   display: grid;
   place-items: center;
   box-shadow: 0 4px 16px rgba(196,75,40,0.3);
 }
-
 .login-brand-icon svg { width: 24px; height: 24px; }
 
-.login-brand-title {
-  font-size: 1.4rem;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-}
+.login-brand-title { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.5px; }
 
 .login-subtitle {
   color: var(--text-secondary);
@@ -254,12 +205,8 @@ a { color: var(--accent); text-decoration: none; }
   margin-bottom: 16px;
   animation: shakeX 0.35s var(--ease);
 }
-
 .login-error-box.show { display: flex; align-items: center; gap: 8px; }
 
-/* ════════════════════════════════════════════════════════
-   FORM ELEMENTS
-   ════════════════════════════════════════════════════════ */
 .field { margin-bottom: 18px; }
 
 .field-label {
@@ -309,15 +256,8 @@ a { color: var(--accent); text-decoration: none; }
   padding-right: 38px;
 }
 
-.field-hint {
-  font-size: 0.75rem;
-  color: var(--text-tertiary);
-  margin-top: 5px;
-}
+.field-hint { font-size: 0.75rem; color: var(--text-tertiary); margin-top: 5px; }
 
-/* ════════════════════════════════════════════════════════
-   BUTTONS
-   ════════════════════════════════════════════════════════ */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -344,15 +284,9 @@ a { color: var(--accent); text-decoration: none; }
   color: var(--text-on-accent);
   box-shadow: 0 2px 8px rgba(196,75,40,0.25);
 }
-.btn-primary:hover {
-  box-shadow: 0 4px 16px rgba(196,75,40,0.35);
-  transform: translateY(-1px);
-}
+.btn-primary:hover { box-shadow: 0 4px 16px rgba(196,75,40,0.35); transform: translateY(-1px); }
 
-.btn-solid {
-  background: var(--text-primary);
-  color: var(--bg-app);
-}
+.btn-solid { background: var(--text-primary); color: var(--bg-app); }
 .btn-solid:hover { opacity: 0.85; }
 
 .btn-outline {
@@ -360,28 +294,15 @@ a { color: var(--accent); text-decoration: none; }
   color: var(--text-primary);
   border: 1.5px solid var(--border-strong);
 }
-.btn-outline:hover {
-  background: var(--bg-sunken);
-  border-color: var(--text-tertiary);
-}
+.btn-outline:hover { background: var(--bg-sunken); border-color: var(--text-tertiary); }
 
-.btn-ghost {
-  background: transparent;
-  color: var(--text-secondary);
-  padding: 7px 10px;
-}
+.btn-ghost { background: transparent; color: var(--text-secondary); padding: 7px 10px; }
 .btn-ghost:hover { background: var(--bg-sunken); color: var(--text-primary); }
 
-.btn-danger {
-  background: var(--red);
-  color: #fff;
-}
+.btn-danger { background: var(--red); color: #fff; }
 .btn-danger:hover { filter: brightness(1.1); transform: translateY(-1px); }
 
-.btn-success {
-  background: var(--green);
-  color: #fff;
-}
+.btn-success { background: var(--green); color: #fff; }
 .btn-success:hover { filter: brightness(1.1); transform: translateY(-1px); }
 
 .btn-sm { padding: 6px 12px; font-size: 0.78rem; border-radius: var(--radius-sm); }
@@ -390,18 +311,11 @@ a { color: var(--accent); text-decoration: none; }
 .btn-xs { padding: 4px 9px; font-size: 0.72rem; border-radius: var(--radius-xs); }
 .btn-xs svg { width: 12px; height: 12px; }
 
-.btn-icon {
-  width: 32px; height: 32px;
-  padding: 0;
-  border-radius: var(--radius-sm);
-}
+.btn-icon { width: 32px; height: 32px; padding: 0; border-radius: var(--radius-sm); }
 .btn-icon.sm { width: 28px; height: 28px; }
 
 .btn-full { width: 100%; padding: 12px; font-size: 0.92rem; }
 
-/* ════════════════════════════════════════════════════════
-   BADGES / TAGS
-   ════════════════════════════════════════════════════════ */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -418,9 +332,6 @@ a { color: var(--accent); text-decoration: none; }
 .badge-blue { background: var(--blue-bg); color: var(--blue); }
 .badge-neutral { background: var(--bg-sunken); color: var(--text-secondary); }
 
-/* ════════════════════════════════════════════════════════
-   SPINNER
-   ════════════════════════════════════════════════════════ */
 .spinner {
   width: 18px; height: 18px;
   border: 2.5px solid var(--border);
@@ -433,13 +344,9 @@ a { color: var(--accent); text-decoration: none; }
 .spinner.sm { width: 14px; height: 14px; border-width: 2px; }
 .spinner.white { border-color: rgba(255,255,255,0.25); border-top-color: #fff; }
 
-/* ════════════════════════════════════════════════════════
-   DASHBOARD LAYOUT
-   ════════════════════════════════════════════════════════ */
 #app-view { display: none; min-height: 100vh; }
 #app-view.active { display: flex; }
 
-/* ── Sidebar ── */
 .sidebar {
   width: var(--sidebar-w);
   height: 100vh;
@@ -458,11 +365,7 @@ a { color: var(--accent); text-decoration: none; }
   border-bottom: 1px solid var(--border-sidebar);
 }
 
-.sidebar-brand-row {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-}
+.sidebar-brand-row { display: flex; align-items: center; gap: 11px; }
 
 .sidebar-brand-mark {
   width: 36px; height: 36px;
@@ -474,18 +377,8 @@ a { color: var(--accent); text-decoration: none; }
 }
 .sidebar-brand-mark svg { width: 20px; height: 20px; }
 
-.sidebar-brand-name {
-  font-size: 1.05rem;
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: -0.3px;
-}
-
-.sidebar-brand-sub {
-  font-size: 0.68rem;
-  color: rgba(255,255,255,0.35);
-  font-weight: 500;
-}
+.sidebar-brand-name { font-size: 1.05rem; font-weight: 800; color: #fff; letter-spacing: -0.3px; }
+.sidebar-brand-sub { font-size: 0.68rem; color: rgba(255,255,255,0.35); font-weight: 500; }
 
 .sidebar-connected {
   margin-top: 14px;
@@ -510,11 +403,7 @@ a { color: var(--accent); text-decoration: none; }
   flex-shrink: 0;
 }
 
-.sidebar-nav {
-  flex: 1;
-  padding: 14px 10px;
-  overflow-y: auto;
-}
+.sidebar-nav { flex: 1; padding: 14px 10px; overflow-y: auto; }
 
 .sidebar-section-label {
   font-size: 0.6rem;
@@ -540,15 +429,8 @@ a { color: var(--accent); text-decoration: none; }
   position: relative;
 }
 
-.nav-item:hover {
-  background: var(--bg-sidebar-item);
-  color: var(--text-sidebar-hover);
-}
-
-.nav-item.active {
-  background: var(--bg-sidebar-active);
-  color: var(--text-sidebar-active);
-}
+.nav-item:hover { background: var(--bg-sidebar-item); color: var(--text-sidebar-hover); }
+.nav-item.active { background: var(--bg-sidebar-active); color: var(--text-sidebar-active); }
 
 .nav-item.active::before {
   content: '';
@@ -560,19 +442,11 @@ a { color: var(--accent); text-decoration: none; }
   border-radius: 0 4px 4px 0;
 }
 
-.nav-item svg {
-  width: 18px; height: 18px;
-  flex-shrink: 0;
-  opacity: 0.45;
-  transition: opacity 0.15s;
-}
+.nav-item svg { width: 18px; height: 18px; flex-shrink: 0; opacity: 0.45; transition: opacity 0.15s; }
 .nav-item.active svg { opacity: 1; color: var(--accent); }
 .nav-item:hover svg { opacity: 0.75; }
 
-.sidebar-bottom {
-  padding: 12px 10px;
-  border-top: 1px solid var(--border-sidebar);
-}
+.sidebar-bottom { padding: 12px 10px; border-top: 1px solid var(--border-sidebar); }
 
 .sidebar-bottom .btn {
   width: 100%;
@@ -584,43 +458,15 @@ a { color: var(--accent); text-decoration: none; }
 }
 .sidebar-bottom .btn:hover { color: #fff; background: rgba(255,255,255,0.05); }
 
-/* ── Main Panel ── */
-.main-panel {
-  margin-left: var(--sidebar-w);
-  flex: 1;
-  min-height: 100vh;
-}
+.main-panel { margin-left: var(--sidebar-w); flex: 1; min-height: 100vh; }
 
-.view-header {
-  padding: 30px 40px 0;
-  animation: slideDown 0.3s var(--ease) both;
-}
+.view-header { padding: 30px 40px 0; animation: slideDown 0.3s var(--ease) both; }
+.view-header h1 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px; }
+.view-header .view-desc { color: var(--text-secondary); font-size: 0.87rem; margin-top: 3px; }
+.view-header .header-actions { display: flex; gap: 8px; margin-top: 18px; flex-wrap: wrap; align-items: center; }
 
-.view-header h1 {
-  font-size: 1.5rem;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-}
+.view-body { padding: 24px 40px 48px; }
 
-.view-header .view-desc {
-  color: var(--text-secondary);
-  font-size: 0.87rem;
-  margin-top: 3px;
-}
-
-.view-header .header-actions {
-  display: flex;
-  gap: 8px;
-  margin-top: 18px;
-}
-
-.view-body {
-  padding: 24px 40px 48px;
-}
-
-/* ════════════════════════════════════════════════════════
-   CARD
-   ════════════════════════════════════════════════════════ */
 .card {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
@@ -640,13 +486,7 @@ a { color: var(--accent); text-decoration: none; }
   background: var(--bg-surface);
 }
 
-.card-top h3 {
-  font-size: 0.85rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+.card-top h3 { font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
 
 .card-top h3 .count {
   font-size: 0.7rem;
@@ -662,9 +502,6 @@ a { color: var(--accent); text-decoration: none; }
 .card-inner { padding: 0; }
 .card-padded { padding: 20px; }
 
-/* ════════════════════════════════════════════════════════
-   TABLE
-   ════════════════════════════════════════════════════════ */
 .table-scroll { overflow-x: auto; }
 
 table { width: 100%; border-collapse: collapse; }
@@ -685,14 +522,8 @@ thead th {
   z-index: 1;
 }
 
-tbody td {
-  padding: 11px 16px;
-  font-size: 0.85rem;
-  border-bottom: 1px solid var(--border);
-  vertical-align: middle;
-}
+tbody td { padding: 11px 16px; font-size: 0.85rem; border-bottom: 1px solid var(--border); vertical-align: middle; }
 
-/* Density: compact */
 .density-compact thead th { padding: 7px 12px; font-size: 0.62rem; }
 .density-compact tbody td { padding: 5px 12px; font-size: 0.8rem; }
 
@@ -705,29 +536,23 @@ tbody tr:last-child td { border-bottom: none; }
   font-size: 0.78rem;
   font-weight: 500;
   color: var(--accent);
+  transition: filter 0.2s, opacity 0.2s;
 }
 
-.cell-date {
-  font-size: 0.8rem;
-  color: var(--text-secondary);
+/* ── Player ID hide/show ── */
+.ids-hidden .cell-id {
+  filter: blur(5px);
+  opacity: 0.5;
+  user-select: none;
+  cursor: default;
 }
 
-.cell-vc {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  font-weight: 500;
-}
+.cell-date { font-size: 0.8rem; color: var(--text-secondary); }
 
-.cell-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-  align-items: center;
-}
+.cell-vc { font-family: var(--font-mono); font-size: 0.78rem; font-weight: 500; }
 
-/* ════════════════════════════════════════════════════════
-   PAGINATION
-   ════════════════════════════════════════════════════════ */
+.cell-actions { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+
 .paginator {
   display: flex;
   align-items: center;
@@ -738,16 +563,8 @@ tbody tr:last-child td { border-bottom: none; }
   background: var(--bg-surface);
 }
 
-.paginator-info {
-  font-size: 0.78rem;
-  color: var(--text-tertiary);
-  margin: 0 16px;
-  font-weight: 500;
-}
+.paginator-info { font-size: 0.78rem; color: var(--text-tertiary); margin: 0 16px; font-weight: 500; }
 
-/* ════════════════════════════════════════════════════════
-   MODAL
-   ════════════════════════════════════════════════════════ */
 .modal-backdrop {
   position: fixed;
   inset: 0;
@@ -764,10 +581,7 @@ tbody tr:last-child td { border-bottom: none; }
   -webkit-backdrop-filter: blur(6px);
 }
 
-.modal-backdrop.open {
-  opacity: 1;
-  visibility: visible;
-}
+.modal-backdrop.open { opacity: 1; visibility: visible; }
 
 .modal-box {
   background: var(--bg-elevated);
@@ -782,9 +596,7 @@ tbody tr:last-child td { border-bottom: none; }
   transition: transform 0.3s var(--ease-spring);
 }
 
-.modal-backdrop.open .modal-box {
-  transform: scale(1) translateY(0);
-}
+.modal-backdrop.open .modal-box { transform: scale(1) translateY(0); }
 
 .modal-head {
   padding: 22px 24px 0;
@@ -794,12 +606,7 @@ tbody tr:last-child td { border-bottom: none; }
   gap: 12px;
 }
 
-.modal-head h3 {
-  font-size: 1.12rem;
-  font-weight: 700;
-  letter-spacing: -0.3px;
-  line-height: 1.3;
-}
+.modal-head h3 { font-size: 1.12rem; font-weight: 700; letter-spacing: -0.3px; line-height: 1.3; }
 
 .modal-head .modal-x {
   width: 30px; height: 30px;
@@ -816,16 +623,8 @@ tbody tr:last-child td { border-bottom: none; }
 .modal-head .modal-x:hover { background: var(--border-strong); color: var(--text-primary); }
 
 .modal-content { padding: 20px 24px; }
-.modal-actions {
-  padding: 0 24px 22px;
-  display: flex;
-  gap: 8px;
-  justify-content: flex-end;
-}
+.modal-actions { padding: 0 24px 22px; display: flex; gap: 8px; justify-content: flex-end; }
 
-/* ════════════════════════════════════════════════════════
-   TOAST
-   ════════════════════════════════════════════════════════ */
 #toasts {
   position: fixed;
   bottom: 20px;
@@ -858,27 +657,13 @@ tbody tr:last-child td { border-bottom: none; }
 .toast-item.success { border-left-color: var(--green); }
 .toast-item.error { border-left-color: var(--red); }
 .toast-item.info { border-left-color: var(--blue); }
-
 .toast-item.exit { animation: toastExit 0.25s var(--ease) forwards; }
-
 .toast-item svg { width: 16px; height: 16px; flex-shrink: 0; opacity: 0.7; }
 
-/* ════════════════════════════════════════════════════════
-   SEARCH BAR
-   ════════════════════════════════════════════════════════ */
-.search-row {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-}
-
+.search-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
 .search-row .field-select { width: 170px; flex-shrink: 0; }
 .search-row .field-input { flex: 1; min-width: 220px; }
 
-/* ════════════════════════════════════════════════════════
-   EMPTY & LOADING STATES
-   ════════════════════════════════════════════════════════ */
 .state-empty,
 .state-loading {
   display: flex;
@@ -894,12 +679,8 @@ tbody tr:last-child td { border-bottom: none; }
 .state-empty svg { width: 36px; height: 36px; opacity: 0.3; margin-bottom: 4px; }
 .state-empty p { font-size: 0.88rem; }
 .state-empty .hint { font-size: 0.78rem; }
-
 .state-loading { flex-direction: row; padding: 48px 24px; font-size: 0.88rem; gap: 12px; }
 
-/* ════════════════════════════════════════════════════════
-   LOGS
-   ════════════════════════════════════════════════════════ */
 .log-row {
   display: flex;
   align-items: flex-start;
@@ -911,42 +692,18 @@ tbody tr:last-child td { border-bottom: none; }
 }
 .log-row:last-child { border-bottom: none; }
 
-.log-ts {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--text-tertiary);
-  white-space: nowrap;
-  min-width: 72px;
-  padding-top: 2px;
-}
-
+.log-ts { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-tertiary); white-space: nowrap; min-width: 72px; padding-top: 2px; }
 .log-msg { flex: 1; color: var(--text-primary); line-height: 1.45; }
 .log-msg strong { font-weight: 600; }
 
-/* ════════════════════════════════════════════════════════
-   SETTINGS
-   ════════════════════════════════════════════════════════ */
-.setting-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 18px 0;
-  border-bottom: 1px solid var(--border);
-}
+.setting-item { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; border-bottom: 1px solid var(--border); }
 .setting-item:last-child { border-bottom: none; }
-
 .setting-meta h4 { font-size: 0.9rem; font-weight: 600; }
 .setting-meta p { font-size: 0.78rem; color: var(--text-secondary); margin-top: 2px; }
 
-/* Toggle */
 .switch { position: relative; width: 46px; height: 26px; cursor: pointer; flex-shrink: 0; }
 .switch input { display: none; }
-.switch-track {
-  position: absolute; inset: 0;
-  background: var(--border-strong);
-  border-radius: var(--radius-full);
-  transition: background 0.2s;
-}
+.switch-track { position: absolute; inset: 0; background: var(--border-strong); border-radius: var(--radius-full); transition: background 0.2s; }
 .switch input:checked + .switch-track { background: var(--accent); }
 .switch-knob {
   position: absolute;
@@ -959,61 +716,17 @@ tbody tr:last-child td { border-bottom: none; }
 }
 .switch input:checked ~ .switch-knob { transform: translateX(20px); }
 
-/* ════════════════════════════════════════════════════════
-   INVENTORY MODAL ITEMS
-   ════════════════════════════════════════════════════════ */
-.inv-section-label {
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--text-tertiary);
-  margin-bottom: 10px;
-}
+.inv-section-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-tertiary); margin-bottom: 10px; }
 
-.vc-chip {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 9px 14px;
-  background: var(--bg-sunken);
-  border-radius: var(--radius-sm);
-  margin-bottom: 5px;
-  font-size: 0.85rem;
-}
-.vc-chip strong {
-  font-family: var(--font-mono);
-  font-weight: 600;
-  color: var(--accent);
-}
+.vc-chip { display: flex; align-items: center; justify-content: space-between; padding: 9px 14px; background: var(--bg-sunken); border-radius: var(--radius-sm); margin-bottom: 5px; font-size: 0.85rem; }
+.vc-chip strong { font-family: var(--font-mono); font-weight: 600; color: var(--accent); }
 
-.inv-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 0;
-  border-bottom: 1px solid var(--border);
-  font-size: 0.85rem;
-}
+.inv-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
 .inv-row:last-child { border-bottom: none; }
 .inv-name { font-weight: 600; }
-.inv-sub {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--text-tertiary);
-  margin-top: 1px;
-}
+.inv-sub { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-tertiary); margin-top: 1px; }
+.inv-none { font-size: 0.83rem; color: var(--text-tertiary); font-style: italic; padding: 4px 0; }
 
-.inv-none {
-  font-size: 0.83rem;
-  color: var(--text-tertiary);
-  font-style: italic;
-  padding: 4px 0;
-}
-
-/* ════════════════════════════════════════════════════════
-   MOBILE RESPONSIVE
-   ════════════════════════════════════════════════════════ */
 .mobile-hamburger {
   display: none;
   position: fixed;
@@ -1029,13 +742,7 @@ tbody tr:last-child td { border-bottom: none; }
   color: var(--text-primary);
 }
 
-.mobile-scrim {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-  z-index: 190;
-}
+.mobile-scrim { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 190; }
 .mobile-scrim.show { display: block; }
 
 @media (max-width: 820px) {
@@ -1048,36 +755,14 @@ tbody tr:last-child td { border-bottom: none; }
   .search-row .field-select { width: 100%; }
 }
 
-/* ════════════════════════════════════════════════════════
-   HIDE HELPER
-   ════════════════════════════════════════════════════════ */
-/* ════════════════════════════════════════════════════════
-   CATALOG ITEM PICKER
-   ════════════════════════════════════════════════════════ */
-.catalog-picker {
-  position: relative;
-}
-
-.catalog-search-wrap {
-  position: relative;
-}
-
-.catalog-search-wrap .field-input {
-  padding-right: 36px;
-}
-
-.catalog-search-wrap .catalog-spin {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-}
+.catalog-picker { position: relative; }
+.catalog-search-wrap { position: relative; }
+.catalog-search-wrap .field-input { padding-right: 36px; }
+.catalog-search-wrap .catalog-spin { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); }
 
 .catalog-dropdown {
   position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
+  top: 100%; left: 0; right: 0;
   z-index: 20;
   margin-top: 4px;
   background: var(--bg-elevated);
@@ -1088,7 +773,6 @@ tbody tr:last-child td { border-bottom: none; }
   overflow-y: auto;
   display: none;
 }
-
 .catalog-dropdown.open { display: block; }
 
 .catalog-option {
@@ -1101,41 +785,13 @@ tbody tr:last-child td { border-bottom: none; }
   justify-content: space-between;
   gap: 10px;
 }
-
 .catalog-option:last-child { border-bottom: none; }
 .catalog-option:hover { background: var(--accent-subtle); }
 
-.catalog-option-name {
-  font-size: 0.85rem;
-  font-weight: 600;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.catalog-option-id {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--text-tertiary);
-  flex-shrink: 0;
-}
-
-.catalog-option-class {
-  font-size: 0.7rem;
-  padding: 1px 7px;
-  border-radius: var(--radius-full);
-  background: var(--bg-sunken);
-  color: var(--text-secondary);
-  font-weight: 500;
-  flex-shrink: 0;
-}
-
-.catalog-empty {
-  padding: 16px;
-  text-align: center;
-  font-size: 0.82rem;
-  color: var(--text-tertiary);
-}
+.catalog-option-name { font-size: 0.85rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.catalog-option-id { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-tertiary); flex-shrink: 0; }
+.catalog-option-class { font-size: 0.7rem; padding: 1px 7px; border-radius: var(--radius-full); background: var(--bg-sunken); color: var(--text-secondary); font-weight: 500; flex-shrink: 0; }
+.catalog-empty { padding: 16px; text-align: center; font-size: 0.82rem; color: var(--text-tertiary); }
 
 .catalog-selected {
   display: flex;
@@ -1148,121 +804,42 @@ tbody tr:last-child td { border-bottom: none; }
   margin-top: 8px;
   font-size: 0.83rem;
 }
-
 .catalog-selected .cs-name { font-weight: 600; color: var(--green); }
 .catalog-selected .cs-id { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-secondary); }
-
-.catalog-selected .cs-clear {
-  margin-left: auto;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--text-tertiary);
-  padding: 2px;
-  border-radius: 4px;
-  display: grid;
-  place-items: center;
-}
+.catalog-selected .cs-clear { margin-left: auto; background: none; border: none; cursor: pointer; color: var(--text-tertiary); padding: 2px; border-radius: 4px; display: grid; place-items: center; }
 .catalog-selected .cs-clear:hover { color: var(--red); background: var(--red-bg); }
 
-/* Ban list in unban modal */
-.ban-entry {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--border);
-}
+.ban-entry { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); }
 .ban-entry:last-child { border-bottom: none; }
-
 .ban-info { flex: 1; }
 .ban-reason { font-size: 0.85rem; font-weight: 600; }
 .ban-meta { font-size: 0.75rem; color: var(--text-secondary); margin-top: 3px; line-height: 1.5; }
 .ban-meta span { display: inline-block; margin-right: 12px; }
 
-/* ════════════════════════════════════════════════════════
-   REMEMBER ME CHECKBOX
-   ════════════════════════════════════════════════════════ */
-.remember-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-  margin-bottom: 20px;
-  padding: 10px 0;
-  user-select: none;
-}
-
+.remember-row { display: flex; align-items: center; gap: 10px; cursor: pointer; margin-bottom: 20px; padding: 10px 0; user-select: none; }
 .remember-row input { display: none; }
+.remember-check { width: 20px; height: 20px; border: 2px solid var(--border-strong); border-radius: var(--radius-xs); display: grid; place-items: center; transition: all 0.15s var(--ease); flex-shrink: 0; position: relative; }
+.remember-row input:checked + .remember-check { background: var(--accent); border-color: var(--accent); }
+.remember-row input:checked + .remember-check::after { content: ''; width: 6px; height: 10px; border: solid #fff; border-width: 0 2.5px 2.5px 0; transform: rotate(45deg) translateY(-1px); }
+.remember-text { font-size: 0.85rem; font-weight: 500; color: var(--text-primary); }
+.remember-hint { font-size: 0.75rem; color: var(--text-tertiary); font-weight: 400; }
 
-.remember-check {
-  width: 20px; height: 20px;
-  border: 2px solid var(--border-strong);
-  border-radius: var(--radius-xs);
-  display: grid;
-  place-items: center;
-  transition: all 0.15s var(--ease);
-  flex-shrink: 0;
-  position: relative;
-}
-
-.remember-row input:checked + .remember-check {
-  background: var(--accent);
-  border-color: var(--accent);
-}
-
-.remember-row input:checked + .remember-check::after {
-  content: '';
-  width: 6px; height: 10px;
-  border: solid #fff;
-  border-width: 0 2.5px 2.5px 0;
-  transform: rotate(45deg) translateY(-1px);
-}
-
-.remember-text {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.remember-hint {
-  font-size: 0.75rem;
-  color: var(--text-tertiary);
-  font-weight: 400;
-}
-
-/* Credential saved indicator in settings */
-.cred-status {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 14px;
-  border-radius: var(--radius-sm);
-  font-size: 0.82rem;
-  font-weight: 500;
-  margin-top: 6px;
-}
-
-.cred-status.saved {
-  background: var(--green-bg);
-  color: var(--green);
-  border: 1px solid rgba(26,135,84,0.12);
-}
-
-.cred-status.none {
-  background: var(--bg-sunken);
-  color: var(--text-tertiary);
-}
+.cred-status { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: var(--radius-sm); font-size: 0.82rem; font-weight: 500; margin-top: 6px; }
+.cred-status.saved { background: var(--green-bg); color: var(--green); border: 1px solid rgba(26,135,84,0.12); }
+.cred-status.none { background: var(--bg-sunken); color: var(--text-tertiary); }
 
 .hidden { display: none !important; }
+
+/* ── ID visibility toggle button active state ── */
+.btn-id-toggle-active {
+  background: var(--amber-bg) !important;
+  border-color: var(--amber) !important;
+  color: var(--amber) !important;
+}
 </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════════════════
-     LOGIN VIEW
-     ═══════════════════════════════════════════════════════ -->
 <div id="login-view">
   <div class="login-card">
     <div class="login-brand">
@@ -1312,18 +889,13 @@ tbody tr:last-child td { border-bottom: none; }
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════
-     APP VIEW (DASHBOARD)
-     ═══════════════════════════════════════════════════════ -->
 <div id="app-view">
 
-  <!-- Mobile hamburger -->
   <button class="mobile-hamburger" onclick="toggleSidebar()">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
   </button>
   <div class="mobile-scrim" id="mobile-scrim" onclick="toggleSidebar()"></div>
 
-  <!-- SIDEBAR -->
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-brand">
       <div class="sidebar-brand-row">
@@ -1379,7 +951,6 @@ tbody tr:last-child td { border-bottom: none; }
     </div>
   </aside>
 
-  <!-- MAIN CONTENT -->
   <div class="main-panel">
 
     <!-- ════════ PLAYERS PAGE ════════ -->
@@ -1391,6 +962,20 @@ tbody tr:last-child td { border-bottom: none; }
           <button class="btn btn-primary btn-sm" onclick="fetchPlayers()">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>
             Load / Refresh
+          </button>
+          <button class="btn btn-outline btn-sm" id="btn-toggle-ids" onclick="togglePlayerIds()">
+            <!-- eye-off icon (shown when IDs are visible = clicking will hide) -->
+            <svg id="icon-ids-visible" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94"/>
+              <path d="M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19"/>
+              <line x1="1" y1="1" x2="23" y2="23"/>
+            </svg>
+            <!-- eye icon (shown when IDs are hidden = clicking will show) -->
+            <svg id="icon-ids-hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+            <span id="lbl-toggle-ids">Hide IDs</span>
           </button>
         </div>
       </div>
@@ -1505,6 +1090,17 @@ tbody tr:last-child td { border-bottom: none; }
             </div>
             <div class="setting-item">
               <div class="setting-meta">
+                <h4>Show Player IDs</h4>
+                <p>Display or blur PlayFab IDs in the player table</p>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="sw-show-ids" checked onchange="setShowIds(this.checked)">
+                <div class="switch-track"></div>
+                <div class="switch-knob"></div>
+              </label>
+            </div>
+            <div class="setting-item">
+              <div class="setting-meta">
                 <h4>Confirmation Dialogs</h4>
                 <p>Require confirmation before destructive actions like bans</p>
               </div>
@@ -1526,20 +1122,15 @@ tbody tr:last-child td { border-bottom: none; }
       </div>
     </div>
 
-  </div> <!-- /main-panel -->
-</div> <!-- /app-view -->
+  </div>
+</div>
 
-<!-- MODAL -->
 <div class="modal-backdrop" id="modal-backdrop" onclick="if(event.target===this)closeModal()">
   <div class="modal-box" id="modal-box"></div>
 </div>
 
-<!-- TOASTS -->
 <div id="toasts"></div>
 
-<!-- ═══════════════════════════════════════════════════════
-     JAVASCRIPT
-     ═══════════════════════════════════════════════════════ -->
 <script>
 /* ────────────────────────────────────────────────────────
    STATE
@@ -1549,6 +1140,7 @@ let CRED = { titleId: null, secret: null };
 const S = {
   darkMode: localStorage.getItem('pfadm_dark') === '1',
   density: localStorage.getItem('pfadm_density') || 'comfortable',
+  showPlayerIds: localStorage.getItem('pfadm_show_ids') !== '0', // default true
   confirmDialogs: true
 };
 
@@ -1556,7 +1148,7 @@ let allPlayers = [];
 let playerPage = 0;
 const PAGE_SIZE = 20;
 let actionLogs = [];
-let catalogCache = null;   // { version, items[] }
+let catalogCache = null;
 let catalogLoading = false;
 
 /* ────────────────────────────────────────────────────────
@@ -1564,7 +1156,6 @@ let catalogLoading = false;
    ──────────────────────────────────────────────────────── */
 function setCookie(name, value, days = 90) {
   const expires = new Date(Date.now() + days * 864e5).toUTCString();
-  // Secure + SameSite=Strict for GitHub Pages (HTTPS)
   document.cookie = `${name}=${encodeURIComponent(value)};expires=${expires};path=/;SameSite=Strict;Secure`;
 }
 
@@ -1577,8 +1168,6 @@ function deleteCookie(name) {
   document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;SameSite=Strict;Secure`;
 }
 
-// Simple obfuscation so the key isn't stored in plain text
-// (NOT encryption — just basic encoding to avoid casual exposure)
 function obfuscate(str) {
   try { return btoa(unescape(encodeURIComponent(str))).split('').reverse().join(''); }
   catch { return btoa(str); }
@@ -1597,9 +1186,7 @@ function saveCredsToCookie(titleId, secret) {
 function loadCredsFromCookie() {
   const tid = getCookie('pfadm_tid');
   const sk = getCookie('pfadm_sk');
-  if (tid && sk) {
-    return { titleId: deobfuscate(tid), secret: deobfuscate(sk) };
-  }
+  if (tid && sk) return { titleId: deobfuscate(tid), secret: deobfuscate(sk) };
   return null;
 }
 
@@ -1616,7 +1203,6 @@ function hasSavedCreds() {
    INIT
    ──────────────────────────────────────────────────────── */
 (function boot() {
-  // Theme
   if (S.darkMode) {
     document.documentElement.classList.add('dark');
     const el = document.getElementById('sw-dark');
@@ -1626,13 +1212,17 @@ function hasSavedCreds() {
     const el = document.getElementById('sel-density');
     if (el) el.value = 'compact';
   }
+  // Sync show-ids toggle in settings
+  const swIds = document.getElementById('sw-show-ids');
+  if (swIds) swIds.checked = S.showPlayerIds;
 
-  // Auto-login from cookies
+  // Apply initial ID visibility state
+  applyIdVisibility();
+
   const saved = loadCredsFromCookie();
   if (saved && saved.titleId && saved.secret) {
     document.getElementById('in-title').value = saved.titleId;
     document.getElementById('in-secret').value = saved.secret;
-    // Auto-connect
     autoLogin(saved.titleId, saved.secret);
   }
 })();
@@ -1647,17 +1237,13 @@ async function autoLogin(titleId, secret) {
 
   try {
     await apiRequest('GetTitleInternalData', { Keys: [] });
-
-    // Success
     document.getElementById('login-view').style.display = 'none';
     document.getElementById('app-view').classList.add('active');
     document.getElementById('connected-label').textContent = 'Connected · Admin API';
-
     addLog('Auto-reconnected', '—', 'success');
     showToast('Reconnected from saved credentials', 'success');
     renderCredStatus();
   } catch {
-    // Cookies are stale / invalid — stay on login screen
     CRED.titleId = null;
     CRED.secret = null;
     btn.disabled = false;
@@ -1665,6 +1251,48 @@ async function autoLogin(titleId, secret) {
     showToast('Saved credentials expired — please log in again', 'info');
     clearCredCookies();
   }
+}
+
+/* ────────────────────────────────────────────────────────
+   PLAYER ID VISIBILITY
+   ──────────────────────────────────────────────────────── */
+function applyIdVisibility() {
+  const tableArea = document.getElementById('players-table-area');
+  const searchArea = document.getElementById('search-results-area');
+  const btn = document.getElementById('btn-toggle-ids');
+  const iconVisible = document.getElementById('icon-ids-visible');
+  const iconHidden = document.getElementById('icon-ids-hidden');
+  const lbl = document.getElementById('lbl-toggle-ids');
+
+  const show = S.showPlayerIds;
+
+  // Toggle blur class on table wrappers
+  if (tableArea) tableArea.classList.toggle('ids-hidden', !show);
+  if (searchArea) searchArea.classList.toggle('ids-hidden', !show);
+
+  // Update button appearance & label
+  if (btn) {
+    btn.classList.toggle('btn-id-toggle-active', !show);
+  }
+  if (iconVisible) iconVisible.classList.toggle('hidden', !show);
+  if (iconHidden) iconHidden.classList.toggle('hidden', show);
+  if (lbl) lbl.textContent = show ? 'Hide IDs' : 'Show IDs';
+
+  // Sync settings toggle
+  const swIds = document.getElementById('sw-show-ids');
+  if (swIds) swIds.checked = show;
+}
+
+function togglePlayerIds() {
+  S.showPlayerIds = !S.showPlayerIds;
+  localStorage.setItem('pfadm_show_ids', S.showPlayerIds ? '1' : '0');
+  applyIdVisibility();
+}
+
+function setShowIds(val) {
+  S.showPlayerIds = val;
+  localStorage.setItem('pfadm_show_ids', val ? '1' : '0');
+  applyIdVisibility();
 }
 
 /* ────────────────────────────────────────────────────────
@@ -1736,7 +1364,6 @@ async function copyToClipboard(text) {
     await navigator.clipboard.writeText(text);
     showToast('Copied to clipboard', 'success');
   } catch {
-    // Fallback
     const ta = document.createElement('textarea');
     ta.value = text;
     ta.style.position = 'fixed';
@@ -1871,17 +1498,14 @@ async function doLogin() {
   CRED.secret = secret;
 
   try {
-    // Lightweight test call
     await apiRequest('GetTitleInternalData', { Keys: [] });
 
-    // Save to cookies if requested
     if (remember) {
       saveCredsToCookie(titleId, secret);
     } else {
       clearCredCookies();
     }
 
-    // Success: switch views
     document.getElementById('login-view').style.display = 'none';
     document.getElementById('app-view').classList.add('active');
     document.getElementById('connected-label').textContent = 'Connected · Admin API';
@@ -1907,10 +1531,8 @@ function doLogout() {
   actionLogs = [];
   catalogCache = null;
   catalogLoading = false;
-  // Don't clear cookies on disconnect — user may want to reconnect
   document.getElementById('app-view').classList.remove('active');
   document.getElementById('login-view').style.display = '';
-  // Pre-fill from cookies if they exist
   const saved = loadCredsFromCookie();
   if (saved) {
     document.getElementById('in-title').value = saved.titleId;
@@ -1962,12 +1584,13 @@ function goPage(name) {
     n.classList.toggle('active', n.dataset.page === name)
   );
 
-  // Refresh credential status when opening settings
   if (name === 'settings') renderCredStatus();
 
-  // Close mobile sidebar
   document.getElementById('sidebar').classList.remove('open');
   document.getElementById('mobile-scrim').classList.remove('show');
+
+  // Re-apply ID visibility when switching to pages with tables
+  if (name === 'players' || name === 'search') applyIdVisibility();
 }
 
 function toggleSidebar() {
@@ -1985,7 +1608,6 @@ async function fetchPlayers() {
   pagEl.classList.add('hidden');
 
   try {
-    // First try AllPlayers direct segment
     let data;
     try {
       data = await apiRequest('GetPlayersInSegment', {
@@ -1993,7 +1615,6 @@ async function fetchPlayers() {
         MaxBatchSize: 300
       });
     } catch {
-      // Fallback: discover the "All Players" segment
       const segData = await apiRequest('GetAllSegments', {});
       const seg = (segData.Segments || []).find(s =>
         s.Name.toLowerCase().includes('all player')
@@ -2040,6 +1661,8 @@ function renderPlayerPage() {
   const slice = allPlayers.slice(start, start + PAGE_SIZE);
 
   area.innerHTML = renderTable(slice);
+  // Re-apply ID visibility after re-render
+  applyIdVisibility();
 
   if (pages > 1) {
     pagEl.classList.remove('hidden');
@@ -2088,13 +1711,13 @@ async function doSearch() {
       VirtualCurrencyBalances: null
     };
 
-    // Try to get VC for this player
     try {
       const inv = await apiRequest('GetUserInventory', { PlayFabId: ui.PlayFabId });
       player.VirtualCurrencyBalances = inv.VirtualCurrency || null;
     } catch {}
 
     area.innerHTML = renderTable([player]);
+    applyIdVisibility();
     addLog('Search', `${mode}: ${term} → ${ui.PlayFabId}`, 'success');
   } catch (err) {
     area.innerHTML = `<div class="state-empty">
@@ -2127,7 +1750,6 @@ async function openInventory(pfid) {
     const items = data.Inventory || [];
     const vc = data.VirtualCurrency || {};
 
-    // Virtual Currencies
     let vcHtml = '';
     const vcKeys = Object.keys(vc);
     if (vcKeys.length) {
@@ -2136,7 +1758,6 @@ async function openInventory(pfid) {
       vcHtml = '<p class="inv-none">No virtual currencies configured</p>';
     }
 
-    // Inventory Items
     let itemsHtml = '';
     if (items.length) {
       itemsHtml = items.map(i => `
@@ -2289,7 +1910,6 @@ async function execSubtractVC(pfid) {
 async function ensureCatalog() {
   if (catalogCache) return catalogCache;
   if (catalogLoading) {
-    // Wait for existing load
     return new Promise(resolve => {
       const check = setInterval(() => {
         if (!catalogLoading) { clearInterval(check); resolve(catalogCache); }
@@ -2299,12 +1919,10 @@ async function ensureCatalog() {
 
   catalogLoading = true;
   try {
-    // Try without specifying a version first (gets default catalog)
     let data;
     try {
       data = await apiRequest('GetCatalogItems', {});
     } catch {
-      // Some titles need explicit version; try "main"
       data = await apiRequest('GetCatalogItems', { CatalogVersion: 'main' });
     }
 
@@ -2331,7 +1949,7 @@ async function ensureCatalog() {
 }
 
 /* ────────────────────────────────────────────────────────
-   ACTION: GRANT ITEM (COSMETIC) — WITH AUTO-CATALOG
+   ACTION: GRANT ITEM
    ──────────────────────────────────────────────────────── */
 let grantItemState = { selectedItemId: null, selectedName: null };
 
@@ -2375,10 +1993,8 @@ async function openGrantItem(pfid) {
     </div>
   `);
 
-  // Start loading catalog in background
   loadCatalogForPicker();
 
-  // Close dropdown when clicking outside
   setTimeout(() => {
     document.addEventListener('click', closeCatalogDropdownOnClickOutside);
   }, 100);
@@ -2387,9 +2003,7 @@ async function openGrantItem(pfid) {
 async function loadCatalogForPicker() {
   const spinEl = document.getElementById('m-cat-spin');
   if (spinEl) spinEl.classList.remove('hidden');
-
   await ensureCatalog();
-
   if (spinEl) spinEl.classList.add('hidden');
 }
 
@@ -2415,7 +2029,6 @@ function filterCatalog(query) {
     );
   }
 
-  // Limit to 50 results for performance
   filtered = filtered.slice(0, 50);
 
   if (!filtered.length) {
@@ -2458,7 +2071,6 @@ function selectCatalogItem(itemId, displayName) {
     `;
   }
 
-  // Hide manual field when catalog item is selected
   const manualField = document.getElementById('m-manual-field');
   if (manualField) manualField.style.opacity = '0.4';
   const manualInput = document.getElementById('m-item-id');
@@ -2480,14 +2092,12 @@ function closeCatalogDropdownOnClickOutside(e) {
     const dd = document.getElementById('m-cat-dropdown');
     if (dd) dd.classList.remove('open');
   }
-  // Clean up if modal is closed
   if (!document.getElementById('modal-backdrop')?.classList.contains('open')) {
     document.removeEventListener('click', closeCatalogDropdownOnClickOutside);
   }
 }
 
 async function execGrantItem(pfid) {
-  // Prefer catalog selection, fall back to manual input
   const itemId = grantItemState.selectedItemId
     || document.getElementById('m-item-id')?.value.trim()
     || '';
@@ -2513,7 +2123,7 @@ async function execGrantItem(pfid) {
 }
 
 /* ────────────────────────────────────────────────────────
-   ACTION: REMOVE ITEM (COSMETIC)
+   ACTION: REMOVE ITEM
    ──────────────────────────────────────────────────────── */
 async function openRevokeItem(pfid) {
   showModal(`
@@ -2567,7 +2177,7 @@ async function execRevokeItem(pfid, instanceId) {
     });
     showToast(`Item revoked`, 'success');
     addLog(`Revoke: ${instanceId}`, pfid, 'success');
-    openRevokeItem(pfid); // Refresh list
+    openRevokeItem(pfid);
   } catch (err) {
     showToast(err.message, 'error');
     addLog(`Revoke item`, pfid, 'error');
@@ -2629,7 +2239,7 @@ async function execBan(pfid) {
 }
 
 /* ────────────────────────────────────────────────────────
-   ACTION: REMOVE BAN (UNBAN)
+   ACTION: UNBAN PLAYER
    ──────────────────────────────────────────────────────── */
 async function openUnban(pfid) {
   showModal(`
@@ -2705,7 +2315,6 @@ async function execUnban(pfid, banId) {
     await apiRequest('RevokeBans', { BanIds: [banId] });
     showToast(`Ban ${banId.slice(0,8)}… revoked`, 'success');
     addLog(`Unban: ${banId.slice(0,12)}…`, pfid, 'success');
-    // Refresh the modal
     openUnban(pfid);
   } catch (err) {
     showToast(err.message, 'error');
@@ -2775,7 +2384,6 @@ function setDarkMode(on) {
 function setDensity(val) {
   S.density = val;
   localStorage.setItem('pfadm_density', val);
-  // Re-render visible tables
   if (allPlayers.length) renderPlayerPage();
 }
 </script>
